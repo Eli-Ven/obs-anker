@@ -1,0 +1,11 @@
+{
+  "id": "anke-writing",
+  "name": "obs-anker",
+  "version": "0.1.3",
+  "minAppVersion": "1.11.4",
+  "description": "Manage Anke writing projects, character portraits, and NGA BBCode export and publishing.",
+  "author": "obs-anker contributors",
+  "isDesktopOnly": true,
+  "authorUrl": "https://github.com/Eli-Ven/obs-anker",
+  "fundingUrl": "https://github.com/Eli-Ven/obs-anker#support"
+}
