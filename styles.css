@@ -279,6 +279,9 @@
   border-radius: 8px;
   pointer-events: none;
 }
+.anke-hover-preview.is-loading {
+  visibility: hidden;
+}
 .anke-hover-preview img {
   display: block;
   max-width: min(180px, 22.5vw);

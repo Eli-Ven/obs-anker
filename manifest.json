@@ -1,7 +1,7 @@
 {
   "id": "anke-writing",
-  "name": "obsanker",
-  "version": "0.1.4",
+  "name": "Anker",
+  "version": "0.1.5",
   "minAppVersion": "1.11.4",
   "description": "Manage Anke writing projects, character portraits, and NGA BBCode export and publishing.",
   "author": "obs-anker contributors",

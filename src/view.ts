@@ -12,6 +12,7 @@ import {
   setTooltip,
   TFile,
   WorkspaceLeaf,
+  type ViewStateResult,
 } from "obsidian";
 import type AnkePlugin from "./main";
 import type { Character, Project, VariantGroup } from "./library";
@@ -25,10 +26,9 @@ import {
   reorderVariant,
   reorderVariantSection,
   variantSections,
-  variants,
   type Variant,
 } from "./document";
-import { Form, Pick, report, run } from "./ui";
+import { Form, Pick, run } from "./ui";
 import { NGA_COLORS } from "./nga-colors";
 import {
   rankVariants,
@@ -71,7 +71,7 @@ export class CharacterView extends ItemView {
   }
   async setState(
     state: { characterPath?: string },
-    result: any,
+    result: ViewStateResult,
   ): Promise<void> {
     this.characterPath = state.characterPath || "";
     await super.setState(state, result);
@@ -833,9 +833,10 @@ export class CharacterView extends ItemView {
       this.hidePreview();
       const doc = row.ownerDocument,
         rect = button.getBoundingClientRect();
-      const preview = doc.body.createDiv({ cls: "anke-hover-preview" });
+      const preview = doc.body.createDiv({
+        cls: "anke-hover-preview is-loading",
+      });
       this.preview = preview;
-      preview.style.visibility = "hidden";
       const img = this.thumbnail(preview, entry.url, group.file, entry.label);
       img.loading = "eager";
       const layout = () => {
@@ -866,7 +867,7 @@ export class CharacterView extends ItemView {
         const preferredLeft = left >= 8 ? left : right;
         preview.style.left = `${Math.max(8, Math.min(preferredLeft, viewportWidth - size.width - 8))}px`;
         preview.style.top = `${Math.max(8, Math.min(rect.top, viewportHeight - size.height - 8))}px`;
-        preview.style.visibility = "visible";
+        preview.removeClass("is-loading");
       };
       img.onload = layout;
       img.onerror = () => {

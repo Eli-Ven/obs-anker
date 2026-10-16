@@ -54,7 +54,7 @@ export class VariantSearch extends SuggestModal<VariantChoice> {
       { command: "Esc", purpose: "取消" },
     ]);
   }
-  onOpen(): void {
+  async onOpen(): Promise<void> {
     // SuggestModal has no public highlight callback. Observe its selection classes
     // so keyboard and mouse navigation keep the same native selection behavior.
     this.previewObserver.observe(this.resultContainerEl, {
@@ -63,7 +63,7 @@ export class VariantSearch extends SuggestModal<VariantChoice> {
       attributes: true,
       attributeFilter: ["class"],
     });
-    super.onOpen();
+    await super.onOpen();
     this.updatePreview();
   }
   onClose(): void {

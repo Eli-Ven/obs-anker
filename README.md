@@ -1,10 +1,10 @@
-# obsanker
+# Anker
 
 Manage Anke (dice-driven fiction) projects and character portraits, write in Markdown, and export or publish individual sections to the NGA forum. Each character is stored in one Markdown file, with headings organizing portrait groups.
 
 ## Installation
 
-Requires Obsidian 1.11.4 or later on macOS or Windows. Download the install ZIP from [Releases](https://github.com/Eli-Ven/obs-anker/releases/latest), extract the `anke-writing` folder into your vault's `.obsidian/plugins/` folder, then enable **obsanker** in Settings → Community plugins. When updating, keep your existing `data.json` and reload the plugin.
+Requires Obsidian 1.11.4 or later on macOS or Windows. Download the install ZIP from [Releases](https://github.com/Eli-Ven/obs-anker/releases/latest), extract the `anke-writing` folder into your vault's `.obsidian/plugins/` folder, then enable **Anker** in Settings → Community plugins. When updating, keep your existing `data.json` and reload the plugin.
 
 ## Usage
 
@@ -33,7 +33,7 @@ The interface is primarily in Chinese. Writing and character management work off
 
 1. 打开 [Releases](https://github.com/Eli-Ven/obs-anker/releases/latest)，下载对应版本的 `obs-anker-<version>.zip`。
 2. 解压后，将 `anke-writing` 文件夹放入你的 Vault 的 `.obsidian/plugins/`。
-3. 在 Obsidian「设置 → 第三方插件」中启用 **obsanker**。
+3. 在 Obsidian「设置 → 第三方插件」中启用 **Anker**。
 
 更新时替换插件包中的文件，再停用并重新启用插件。保留已有的 `data.json`，它保存偏好和发布记录。插件文件夹名保持 `anke-writing`，以沿用现有设置和快捷键。
 
