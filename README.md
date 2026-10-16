@@ -1,4 +1,18 @@
-# obs-anker
+# obsanker
+
+Manage Anke (dice-driven fiction) projects and character portraits, write in Markdown, and export or publish individual sections to the NGA forum. Each character is stored in one Markdown file, with headings organizing portrait groups.
+
+## Installation
+
+Requires Obsidian 1.11.4 or later on macOS or Windows. Download the install ZIP from [Releases](https://github.com/Eli-Ven/obs-anker/releases/latest), extract the `anke-writing` folder into your vault's `.obsidian/plugins/` folder, then enable **obsanker** in Settings → Community plugins. When updating, keep your existing `data.json` and reload the plugin.
+
+## Usage
+
+Create a project folder, run **anke init** from the command palette, and select that folder. Add characters from the sidebar. Create a chapter such as `1-1 Chapter.md` inside the project folder and separate sections with a standalone `---` line, leaving a blank line above it. Use **Option/Alt+C** to copy the selected text or current section as NGA BBCode. All shortcuts can be changed in Obsidian's Hotkeys settings.
+
+The interface is primarily in Chinese. Writing and character management work offline; remote image previews access the image host, and optional NGA publishing sends the chosen section to your bound forum thread using the cookie you provide. The plugin enumerates vault file paths and cached metadata to find projects, characters, chapters and image choices. It writes to the clipboard only when you invoke the copy command; it does not read the clipboard. No telemetry is collected.
+
+## 中文介绍
 
 在 Obsidian 中创作安科：管理多部作品和角色差分，用 Markdown 写作，将当前分节复制为 NGA BBCode 或发布到 NGA。
 
@@ -17,9 +31,9 @@
 
 支持 macOS 和 Windows，要求 **Obsidian 1.11.4 或更新版本**。macOS 已做实际使用验证；Windows 尚待实机验证。目前通过 GitHub 安装，社区插件目录审核通过后会更新此处。
 
-1. 打开 [Releases](https://github.com/Eli-Ven/obs-anker/releases/latest)，下载 `obs-anker-0.1.3.zip`。
+1. 打开 [Releases](https://github.com/Eli-Ven/obs-anker/releases/latest)，下载对应版本的 `obs-anker-<version>.zip`。
 2. 解压后，将 `anke-writing` 文件夹放入你的 Vault 的 `.obsidian/plugins/`。
-3. 在 Obsidian「设置 → 第三方插件」中启用 **obs-anker**。
+3. 在 Obsidian「设置 → 第三方插件」中启用 **obsanker**。
 
 更新时替换插件包中的文件，再停用并重新启用插件。保留已有的 `data.json`，它保存偏好和发布记录。插件文件夹名保持 `anke-writing`，以沿用现有设置和快捷键。
 
@@ -51,7 +65,8 @@
 
 ## 网络与数据
 
-- 写作和角色文件保存在本地 Vault，角色管理与 BBCode 转换不要求 NGA 账号。
+- 写作和角色文件保存在本地 Vault，角色管理与 BBCode 转换不要求 NGA 账号。插件枚举保险库文件路径及缓存元数据，以识别项目、角色、章节和图片选项。
+- 仅在执行复制命令时写入剪贴板，不读取剪贴板内容。
 - 预览远程图片时会访问图片链接的主机；检查 NGA 图片尺寸及导出带尺寸图片时会匿名访问对应图片地址。
 - 发布功能使用你主动保存的 NGA Cookie，向绑定帖子的 NGA 主机发送回复。Cookie 使用 Obsidian SecretStorage 保存；发布记录保存在插件配置中，包含已发送的正文。
 - 定时发布只在指定执行设备的 Obsidian 运行时执行；错过的任务会提示处理。插件没有遥测，也不读取 Vault 外的个人文件。

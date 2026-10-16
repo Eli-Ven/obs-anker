@@ -1,17 +1,12 @@
-/* Hide the redundant tab strip only when this group contains our panel alone. */
-.workspace-tabs:has(
-    > .workspace-tab-container
-      > .workspace-leaf:only-child
-      > [data-type="anke-characters"]
-  )
-  > .workspace-tab-header-container {
+/* A layout event marks tab groups that contain only this panel. */
+.workspace-tabs.anke-single-panel > .workspace-tab-header-container {
   display: none;
 }
-.anke-panel {
+.workspace-leaf-content .view-content.anke-panel {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  padding: 8px !important;
+  padding: 8px 8px 28px;
   overflow: hidden;
 }
 .anke-toolbar {
@@ -42,19 +37,19 @@
   --anke-character-row-height: 50px;
   align-content: start;
 }
-.anke-character {
+.anke-panel button.anke-character {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 4px;
   min-width: 0;
   min-height: var(--anke-character-row-height);
-  height: var(--anke-character-row-height) !important;
-  padding: 3px !important;
+  height: var(--anke-character-row-height);
+  padding: 3px;
   font-size: 12px;
   line-height: 14px;
   overflow: hidden;
-  box-shadow: none !important;
+  box-shadow: none;
 }
 .anke-character img,
 .anke-initial {
@@ -115,10 +110,10 @@
 .anke-details > .anke-toolbar {
   flex-shrink: 0;
 }
-.anke-avatar {
-  padding: 2px !important;
+.anke-panel .anke-toolbar button.anke-avatar {
+  padding: 2px;
   width: 30px;
-  height: 32px !important;
+  height: 32px;
 }
 .anke-details > .anke-toolbar .anke-color-button {
   width: 24px;
@@ -243,13 +238,13 @@
   border-radius: 6px;
   background: var(--background-secondary);
 }
-.anke-thumbnail {
+.anke-panel button.anke-thumbnail {
   flex-shrink: 0;
   width: 28px;
-  height: 28px !important;
-  padding: 0 !important;
-  background: none !important;
-  box-shadow: none !important;
+  height: 28px;
+  padding: 0;
+  background: none;
+  box-shadow: none;
   cursor: grab;
 }
 .anke-thumbnail img {
@@ -259,13 +254,13 @@
   border-radius: 4px;
   pointer-events: none;
 }
-.anke-variant input {
+.anke-panel .anke-variant input {
   min-width: 0;
   flex: 0 1 calc(6em + 6px);
   width: calc(6em + 6px);
   box-sizing: border-box;
   height: 24px;
-  padding: 2px !important;
+  padding: 2px;
   font-size: var(--font-ui-small);
   border-color: transparent;
   background: transparent;
@@ -357,10 +352,6 @@
 .anke-search-source {
   color: var(--text-muted);
   font-size: var(--font-ui-smaller);
-}
-/* The desktop status bar overlays the lower edge of a docked leaf. */
-.anke-panel {
-  padding-bottom: 28px !important;
 }
 
 .anke-outline,

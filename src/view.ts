@@ -43,6 +43,7 @@ export class CharacterView extends ItemView {
   characterPath = "";
   private generation = 0;
   private preview?: HTMLElement;
+  private tabGroup: HTMLElement | null = null;
   private outlineFile: TFile | null = null;
   private rankingFile: TFile | null = null;
   private usageSnapshot: CharacterUsage = {};
@@ -81,6 +82,10 @@ export class CharacterView extends ItemView {
     const followFile = () => this.followOutlineFile();
     this.registerEvent(this.app.workspace.on("file-open", followFile));
     this.registerEvent(this.app.workspace.on("active-leaf-change", followFile));
+    this.registerEvent(
+      this.app.workspace.on("layout-change", () => this.updateTabStrip()),
+    );
+    this.updateTabStrip();
     await this.render();
   }
   private followOutlineFile(): void {
@@ -95,6 +100,23 @@ export class CharacterView extends ItemView {
   }
   async onClose(): Promise<void> {
     this.hidePreview();
+    this.tabGroup?.removeClass("anke-single-panel");
+    this.tabGroup = null;
+  }
+  private updateTabStrip(): void {
+    const group = this.containerEl.closest<HTMLElement>(".workspace-tabs");
+    if (this.tabGroup !== group) {
+      this.tabGroup?.removeClass("anke-single-panel");
+      this.tabGroup = group;
+    }
+    if (!group) return;
+    const leaves = group.querySelectorAll(
+      ":scope > .workspace-tab-container > .workspace-leaf",
+    );
+    group.toggleClass(
+      "anke-single-panel",
+      leaves.length === 1 && leaves[0].contains(this.containerEl),
+    );
   }
   resetUsageBoost(file: TFile, urls: string[]): void {
     if (file === this.rankingFile) resetBoost(this.usageSnapshot, urls);

@@ -474,7 +474,9 @@ export default class AnkePlugin extends Plugin {
       }),
     );
     this.registerInterval(
-      window.setInterval(() => run(() => this.publisher.tick()), 10000),
+      window.setInterval(() => {
+        run(() => this.publisher.tick());
+      }, 10000),
     );
     this.app.workspace.onLayoutReady(() => {
       followActiveFile();
