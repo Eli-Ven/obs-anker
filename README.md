@@ -4,7 +4,9 @@ Manage Anke (dice-driven fiction) projects and character portraits, write in Mar
 
 ## Installation
 
-Requires Obsidian 1.11.4 or later on macOS or Windows. Download the install ZIP from [Releases](https://github.com/Eli-Ven/obs-anker/releases/latest), extract the `anke-writing` folder into your vault's `.obsidian/plugins/` folder, then enable **Anker** in Settings → Community plugins. When updating, keep your existing `data.json` and reload the plugin.
+Requires Obsidian 1.11.4 or later on macOS or Windows. Open [Anker in the community directory](https://community.obsidian.md/plugins/anke-writing) and select **Add to Obsidian**.
+
+For manual installation, download the install ZIP from [Releases](https://github.com/Eli-Ven/obs-anker/releases/latest), extract the `anke-writing` folder into your vault's `.obsidian/plugins/` folder, then enable **Anker** in Settings → Community plugins. When updating, keep your existing `data.json` and reload the plugin.
 
 ## Usage
 
@@ -29,7 +31,9 @@ The interface is primarily in Chinese. Writing and character management work off
 
 ## 安装
 
-支持 macOS 和 Windows，要求 **Obsidian 1.11.4 或更新版本**。macOS 已做实际使用验证；Windows 尚待实机验证。目前通过 GitHub 安装，社区插件目录审核通过后会更新此处。
+支持 macOS 和 Windows，要求 **Obsidian 1.11.4 或更新版本**。macOS 已做实际使用验证；Windows 尚待实机验证。
+
+打开 [Anker 社区插件页面](https://community.obsidian.md/plugins/anke-writing)，点击 **Add to Obsidian** 安装。若新上架条目尚未同步到客户端，也可通过 GitHub 手动安装：
 
 1. 打开 [Releases](https://github.com/Eli-Ven/obs-anker/releases/latest)，下载对应版本的 `obs-anker-<version>.zip`。
 2. 解压后，将 `anke-writing` 文件夹放入你的 Vault 的 `.obsidian/plugins/`。
